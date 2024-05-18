@@ -13,15 +13,24 @@ I was recently reminded of the existence of [PokéAPI](https://pokeapi.co/). Whi
 
 The main users for this application are my children. Building the application with them will be a nice medium for demostrating a type of project you can work on with programming. 
 
+## Project Setup
+
+Run with local web server
+
+```bash
+python -m http.server 8000
+```
+
 ## Built With
 
 * JavaScript
 * HTML5 / CSS
 * Visual Studio Code
+* [PokéAPI](https://pokeapi.co/) - data source
 
 ## Useful Resources
 
-* [PokéAPI](https://pokeapi.co/) - data source
+*
 
 ## Maintainers
 
