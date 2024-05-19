@@ -13,7 +13,7 @@ async function main() {
         button.classList.add('color-button');
         button.title = color.name;
         button.style.backgroundColor = color.name;
-        
+
 
         button.addEventListener('click', async () => {
             let pokemon = [];
@@ -28,7 +28,14 @@ async function main() {
             const randomPokemon = pokemon[randomIndex];
 
             if (randomPokemon) {
-                console.log(randomPokemon.name);
+                const randomPokemonStats = await getPokemonByName(randomPokemon.name);
+
+                const figcaption = document.getElementById('pokemon-figcaption');
+                figcaption.innerText = randomPokemon.name;
+
+                const img = document.getElementById('pokemon-image');
+                img.src = randomPokemonStats.sprites.front_default;
+                console.log(randomPokemon.name, randomPokemon.url, img.src);
             }
         });
 
@@ -75,6 +82,26 @@ async function getPokemonByColor(url) {
 
     return pokemon;
 }
+
+/**
+ * Get data for a given pokemon by it's name
+ * @param {string} name 
+ * @returns 
+ */
+async function getPokemonByName(name) {
+    let pokemon = {};
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+        if (response.ok) {
+            pokemon = await response.json();
+        }
+    } catch (e) {
+        console.error(e);
+    }
+
+    return pokemon;
+}
+
 
 /**
  * Gets a random number between min (inclusive) and max (exclusive)
