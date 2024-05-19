@@ -1,3 +1,5 @@
+const data = {};
+
 await main();
 
 /**
@@ -6,21 +8,31 @@ await main();
 async function main() {
     const colors = await getPokemonColors();
     let colorSection = document.getElementById('color-section');
-    for(let color of colors) {
-        const div = document.createElement('div');
-        div.title = color.name;
-        div.style.background = color.name;
-        div.style.width = '10vmin';
-        div.style.height = '10vmin';
-        div.style.border = '2px solid black';
-        div.style.borderRadius = '50%';
+    for (let color of colors) {
+        const button = document.createElement('button');
+        button.classList.add('color-button');
+        button.title = color.name;
+        button.style.backgroundColor = color.name;
+        
 
-        div.addEventListener('click', () => {
-            const pokemon = getPokemonByColor(color.url);
-            console.log(pokemon);
+        button.addEventListener('click', async () => {
+            let pokemon = [];
+
+            if (data[color.url]) {
+                pokemon = data[color.url];
+            } else {
+                pokemon = data[color.url] = await getPokemonByColor(color.url);
+            }
+
+            let randomIndex = getRandomInt(0, pokemon.length);
+            const randomPokemon = pokemon[randomIndex];
+
+            if (randomPokemon) {
+                console.log(randomPokemon.name);
+            }
         });
 
-        colorSection.appendChild(div);
+        colorSection.appendChild(button);
     }
 }
 
@@ -32,12 +44,12 @@ async function getPokemonColors() {
     let colors = [];
     try {
         const response = await fetch('https://pokeapi.co/api/v2/pokemon-color');
-        if(response.ok) {
+        if (response.ok) {
             const json = await response.json();
             colors = json.results;
         }
 
-    } catch(e) {
+    } catch (e) {
         console.error(e);
     }
 
@@ -53,13 +65,26 @@ async function getPokemonByColor(url) {
     let pokemon = [];
     try {
         const response = await fetch(url);
-        if(response.ok) {
+        if (response.ok) {
             const json = await response.json();
             pokemon = json.pokemon_species;
         }
-    } catch(e) {
+    } catch (e) {
         console.error(e);
     }
 
     return pokemon;
+}
+
+/**
+ * Gets a random number between min (inclusive) and max (exclusive)
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values
+ * @param {*} min Minimum number
+ * @param {*} max Maximum number
+ * @returns A random number between min and max
+ */
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
 }
