@@ -34,6 +34,7 @@ python -m http.server 8000
 
 * [Color Hunt color palette](https://colorhunt.co/palette/11423287a922fcdc2af7f6bb)
 * [Unable to display pokemon image from pokeapi.co](https://stackoverflow.com/questions/69239521/unable-to-display-pokemon-image-from-pokeapi-co)
+* [Draw rectangles along a circle](https://stackoverflow.com/a/10819173)
 
 ## Maintainers
 

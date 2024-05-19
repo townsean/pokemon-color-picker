@@ -47,6 +47,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 
@@ -72,16 +73,17 @@ figure {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: var(--pale-yellow);
+    justify-content: center;   
+    background: radial-gradient(var(--pale-yellow) 35%, transparent 70%);
     border-radius: 50%;
-    margin-left: 25%;
     height: 50vmin;
     width: 50vmin;
 }
 
 figcaption {
-    text-transform: capitalize;
+    font-weight: bold;
+    text-align: center;
+    text-wrap: balance;
 }
 
 .color-button {
@@ -91,6 +93,7 @@ figcaption {
     border-radius: 50%;
     opacity: 0.95;
     cursor: pointer;
+    position: absolute;
     background-image:
         radial-gradient(white 20%, white 20%, black 20%, black 30%, transparent 30%, transparent),
         linear-gradient(transparent 46%, black 46%, black 54%, white 54%);
@@ -103,4 +106,10 @@ figcaption {
     &:active {
         opacity: 1;
     }
+}
+
+#color-section {
+    position: absolute;    
+    top: 40%;
+    left: 35%;
 }

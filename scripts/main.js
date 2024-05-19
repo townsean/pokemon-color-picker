@@ -8,34 +8,41 @@ await main();
 async function main() {
     const colors = await getPokemonColors();
     let colorSection = document.getElementById('color-section');
-    for (let color of colors) {
+    for (let index in colors) {
+        const radius = 360 * index / colors.length;
         const button = document.createElement('button');
         button.classList.add('color-button');
-        button.title = color.name;
-        button.style.backgroundColor = color.name;
-
+        button.title = colors[index].name;
+        button.style.backgroundColor = colors[index].name;
+        button.style.transform = `translate(10vmin, 10vmin) rotate(${radius}deg) translate(0, -25vmin)`;
 
         button.addEventListener('click', async () => {
             let pokemon = [];
 
-            if (data[color.url]) {
-                pokemon = data[color.url];
+            if (data[colors[index].url]) {
+                pokemon = data[colors[index].url];
             } else {
-                pokemon = data[color.url] = await getPokemonByColor(color.url);
+                pokemon = data[colors[index].url] = await getPokemonByColor(colors[index].url);
             }
 
             let randomIndex = getRandomInt(0, pokemon.length);
             const randomPokemon = pokemon[randomIndex];
 
             if (randomPokemon) {
-                const randomPokemonStats = await getPokemonByName(randomPokemon.name);
 
                 const figcaption = document.getElementById('pokemon-figcaption');
                 figcaption.innerText = randomPokemon.name;
+                figcaption.style.textTransform = 'capitalize';
 
                 const img = document.getElementById('pokemon-image');
-                img.src = randomPokemonStats.sprites.front_default;
-                console.log(randomPokemon.name, randomPokemon.url, img.src);
+
+                try {
+                    const randomPokemonStats = await getPokemonByName(randomPokemon.name);
+                    img.src = randomPokemonStats.sprites.front_default;
+
+                } catch {
+                    img.src = '';
+                }
             }
         });
 
