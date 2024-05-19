@@ -1,5 +1,5 @@
 # pokemon-color-picker
-A web app that retrieves a random Pokémon based off a given color.  Powered by the [PokéAPI](https://pokeapi.co/), a RESTful Pokémon API.
+A web app that retrieves a random Pokémon based off a given color.  Powered by the [PokéAPI](https://pokeapi.co/), a RESTful Pokémon API. Check it out [here](https://townsean.github.io/pokemon-color-picker/)!
 
 ## Synopsis
 
