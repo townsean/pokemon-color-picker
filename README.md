@@ -9,6 +9,8 @@ Pokémon Color Picker is a simple, vanilla JS web application that retrieves dat
 
 ![Pokémon Color Picker Preview](data/preview-640px.gif)
 
+The Pokéballs are drawn with CSS. I detailed how to draw a Pokéball with a single div on the The Coding Couple blog post: [Pokéball Single DIV CSS Drawing | Tutorial](https://www.thecodingcouple.com/pokeball-single-div-css-drawing-tutorial/).
+
 ## Motivation
 
 I am a child of the 90s. One of the first games I owned on my red Gameboy Pocket was Pokémon Yellow. I loved that game, and my love of it led to my love of the Pokémon TV series. Now as a parent, I get to watch the joy Pokémon brings to my children. 
