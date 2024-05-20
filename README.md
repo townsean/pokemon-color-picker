@@ -7,6 +7,8 @@ Check it out [here](https://townsean.github.io/pokemon-color-picker/)!
 
 Pokémon Color Picker is a simple, vanilla JS web application that retrieves data about a random Pokémon based off a user [specified color](https://pokeapi.co/docs/v2#pokemon-colors).
 
+![Pokémon Color Picker Preview](data/preview-640px.gif)
+
 ## Motivation
 
 I am a child of the 90s. One of the first games I owned on my red Gameboy Pocket was Pokémon Yellow. I loved that game, and my love of it led to my love of the Pokémon TV series. Now as a parent, I get to watch the joy Pokémon brings to my children. 
