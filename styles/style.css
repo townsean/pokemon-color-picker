@@ -84,6 +84,7 @@ figcaption {
     font-weight: bold;
     text-align: center;
     text-wrap: balance;
+    padding: 0 20%;
 }
 
 .color-button {
