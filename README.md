@@ -1,7 +1,9 @@
 # pokemon-color-picker
 A web app that retrieves a random Pokémon based off a given color.  Powered by the [PokéAPI](https://pokeapi.co/), a RESTful Pokémon API. A work in progress! 
 
-Check it out [here](https://townsean.github.io/pokemon-color-picker/)!
+Check it out [here](https://townsean.github.io/pokemon-color-picker/)! 
+
+[Pokémon Color Picker Development Diary](https://www.thecodingcouple.com/pokemon-color-picker-web-app-dev-diary/).
 
 ## Synopsis
 
@@ -17,7 +19,7 @@ I am a child of the 90s. One of the first games I owned on my red Gameboy Pocket
 
 I was recently reminded of the existence of [PokéAPI](https://pokeapi.co/). While poking around in the docs, I noticed an [endpoint for retrieving Pokémon colors](https://pokeapi.co/docs/v2#pokemon-colors). Then, I got to thinking it would be a neat idea to combine that endpoint with a color wheel for selecting random Pokémon based off their colors. 
 
-The main users for this application are my children. Building the application with them will be a nice medium for demostrating a type of project you can work on with programming. 
+The main users for this application are my children. Building the application with them will be a nice medium for demonstrating a type of project you can work on with programming. 
 
 ## Project Setup
 
