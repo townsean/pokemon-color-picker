@@ -14,7 +14,7 @@ async function main() {
         button.classList.add('color-button');
         button.title = colors[index].name;
         button.style.backgroundColor = colors[index].name;
-        button.style.transform = `translate(10vmin, 10vmin) rotate(${radius}deg) translate(0, -25vmin)`;
+        button.style.transform = `translate(-5vmin, -5vmin) rotate(${radius}deg) translate(0, -25vmin)`;
 
         button.addEventListener('click', async () => {
             let pokemon = [];
